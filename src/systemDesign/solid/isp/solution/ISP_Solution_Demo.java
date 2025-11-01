@@ -87,6 +87,7 @@ public class ISP_Solution_Demo {
 //No forced dependencies on irrelevant functionality.
 //Cleaner, more maintainable design/code.
 //Different Restaurant Employee entities can implement multiple interfaces only when they support those features.
+
 //Summary
 //The Interface Segregation Principle (ISP) helps maintain focused classes by ensuring they only implement the
 //methods they need. To identify potential violations of the ISP, look for indicators such as low cohesion, large or
