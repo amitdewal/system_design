@@ -1,0 +1,146 @@
+
+
+# Creational
+--------------
+
+it control the object creation.
+- various type of creational Patterns are:
+
+1 Singleton - > 
+2 Builder
+3 Factory
+4 Abstract Factory
+5 Object Pool
+6 Prototype
+
+
+# Structural
+-------------
+
+it focus on, how different classes / objects are arrange together so that larger problem can be sloved in most flexible way.
+
+- Various patterns are:
+
+1 Decorator
+2 Proxy
+3 Composite
+4 Adapter
+5 Bridge
+6 Facade
+7 Flyweight
+
+# Behavioral
+--------------
+- it focus on, how different objects communicate or interact with each other.
+
+- Like in other words, with above structural pattern we created the skelton of the system, but how that skelton behaves(corrdination, responsibility, interaction) is all guided by Behavioral pattern.
+
+- Various patterns are:
+
+1 State
+2 Strategy
+3 Observer
+4 Chain Of responsibility
+5 Teamplate
+6 Iterator
+7 interpreter
+8 Command
+9 Visitor
+10 Mediator
+11 Memento
+12 Null Object
+
+
+----------------------------------------------------
+  # Has-a and is-a Relationship
+  
+   
+   is-a This nothing but an inheritance.
+     
+	 Vehicle 
+	 |      |
+ is-a|      |is-a  
+	 |      | 	 
+	 2Wheeler 4wheeler
+   
+   
+   
+
+ has-a = shows a link between 2 objects
+ - house has rooms
+ - Library has books
+ - School has students
+   etc
+   
+
+         Association
+         Aggregation
+		 Composition
+		 
+		 
+		 Association
+		 |         |       
+		 |		   |	
+		 |         |		 
+Weak Relationship  Strong Relationship
+(Aggregation)       (Composition)
+
+
+Aggregation : Existence of one object is not depent on another
+
+Example
+Library
+
+Library<>------ books
+
+here both are independent of each other
+if books are not present ,Library can still exist and similary if library do not exist , books can still exist.
+
+code snipper
+public class Library{
+List<Books> books;
+}
+--------------------------------------------------------------
+
+
+Composition : Existence of one object is dependent on another.
+Example:
+House has rooms.
+Here room existence is dependent on house. if house does not exist, room also will not exist.
+
+House<<>>====== rooms
+
+
+code snippet
+//aslo take care of creation and managing of Rooms objects 
+
+public House(){
+room = new ArrayList<>();
+rooms.add(new Room("Living Room"));
+rooms.add(new Room("BedRoom"));
+}
+}
+
+
+
+========================================================
+# What does SOLID stand for?
+-----------------------------
+S - SRP (Single responsibility principle)
+O - OCP (Open closed principle)
+L - LSP (Liskov Substitute principle)
+I - ISP (Interface Segregation Principle)
+D - DIP (Dependency Inversion Principle)
+
+Advantaged of using SOLID Design Principles
+-------------------------------------------
+- Help us write better code
+- Avoid Duplicate Code
+- Easy to maintain
+- Easy to understand
+- Flexible Software
+- Reduce complexity
+
+
+
+
