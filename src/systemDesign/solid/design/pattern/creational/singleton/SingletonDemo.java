@@ -1,4 +1,12 @@
 package systemDesign.solid.design.pattern.creational.singleton;
+//
+//Singleton Pattern means —
+//
+//“There should be only one object (instance) of a class in the entire application.”
+//
+//and
+//
+//“Everyone should use that same object.”
 
 //Test Singleton Implementation
 public class SingletonDemo {
