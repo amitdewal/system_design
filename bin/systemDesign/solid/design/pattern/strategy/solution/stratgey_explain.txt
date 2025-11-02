@@ -1,0 +1,98 @@
+🧠 Real-Life Example:
+
+Imagine you’re building a payment system in an app.
+
+Users can pay using:
+
+💳 Credit Card
+
+🏦 UPI
+
+💰 PayPal
+
+Normally, you might write something like:
+
+if (type.equals("creditcard")) {
+    // process credit card
+} else if (type.equals("upi")) {
+    // process upi
+} else if (type.equals("paypal")) {
+    // process paypal
+}
+
+
+❌ This becomes messy when you add new payment methods.
+
+✅ Strategy Pattern Approach:
+
+You make one interface that defines a general strategy (behavior).
+Then each payment type has its own implementation.
+
+Step 1: Create Strategy Interface
+public interface PaymentStrategy {
+    void pay(int amount);
+}
+
+Step 2: Create Concrete Strategies
+public class CreditCardPayment implements PaymentStrategy {
+    public void pay(int amount) {
+        System.out.println("Paid " + amount + " using Credit Card");
+    }
+}
+
+public class UPIPayment implements PaymentStrategy {
+    public void pay(int amount) {
+        System.out.println("Paid " + amount + " using UPI");
+    }
+}
+
+public class PayPalPayment implements PaymentStrategy {
+    public void pay(int amount) {
+        System.out.println("Paid " + amount + " using PayPal");
+    }
+}
+
+Step 3: Create a Context Class
+public class PaymentContext {
+    private PaymentStrategy strategy;
+
+    // You can change strategy at runtime
+    public void setPaymentStrategy(PaymentStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void pay(int amount) {
+        strategy.pay(amount);
+    }
+}
+
+Step 4: Use It
+public class Main {
+    public static void main(String[] args) {
+        PaymentContext context = new PaymentContext();
+
+        context.setPaymentStrategy(new CreditCardPayment());
+        context.pay(1000);
+
+        context.setPaymentStrategy(new UPIPayment());
+        context.pay(500);
+    }
+}
+
+🧩 What Happened Here:
+
+Each payment type has its own class (strategy).
+
+The main class doesn’t care how payment is done — just calls pay().
+
+You can add new payment methods without touching old code. 🔥
+
+🎯 Where to Use Strategy Pattern:
+
+Use it when:
+
+You have multiple ways of doing the same thing (e.g., sorting, logging, payment, compression).
+
+You want to avoid big if-else or switch statements.
+
+You need to change behavior at runtime.

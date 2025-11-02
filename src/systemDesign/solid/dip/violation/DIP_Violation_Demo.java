@@ -2,8 +2,6 @@ package systemDesign.solid.dip.violation;
 
 // VIOLATION OF DIP
 
-
-
 public class DIP_Violation_Demo {
 	public static void main(String[] args) {
 
@@ -24,12 +22,13 @@ public class DIP_Violation_Demo {
 		// cannot create macbook with bluetooth keyboard and mouse because
 		// macbook depends on wired keyboard and mouse - tight coupling - violation of
 		// DIP
-	}
 
+//		MacBook macBookWithWiredParts = new MacBook(bluetoothKeyboard, bluetoothMouse);
 //	Problems with the Above Code
 //	The MacBook is tightly coupled to the WiredKeyboard and the WiredMouse .
 //	Cannot create MacBook objects with different parts without modifying the MacBook class.
 //	Difficult to test MacBook in isolation
 //	High-level module MacBook depends on low-level module WiredKeyboard and the WiredMouse .
 
+	}
 }
